@@ -1,0 +1,14 @@
+#!/usr/bin/env coffee
+
+GitSeedNpm = require('nez').objective 'GitSeedNpm',
+
+    nimbal:      'https://localhost:10101/'
+    class:       'Core Module'
+    category:    'Deployability'
+    description: """
+
+        Extend git-seed to easily managem npm installed submodules
+
+    """, (requirement) -> 
+
+
