@@ -22,27 +22,13 @@ module.exports = class NpmPackage extends GitRepo
 
     install: (callback) -> 
 
-        originalDir = process.cwd()
 
-        try 
+        Shell.spawnAt directory: @path, 'npm', ['install'], (error, result) => 
 
-            process.chdir @path
+            if error
 
-            Shell.spawn 'npm', ['install'], (error, result) => 
-
-                if error
-
-                    console.log '(failed)'.red, 'npm install error:', error
-                    callback error, result
-                    return
-
-                console.log '(done)'.green, 'npm install in', @path
-                process.chdir originalDir
+                console.log '(failed)'.red, 'npm install error:', error
                 callback error, result
+                return
 
-
-        catch error
-
-            process.chdir originalDir
-
-            callback error, null
+            callback error, result
