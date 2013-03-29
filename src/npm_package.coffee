@@ -27,9 +27,8 @@ module.exports = class NpmPackage extends GitRepo
         try 
 
             process.chdir @path
-            
 
-            Shell.spawn 'npm', ['install'], (error, result) -> 
+            Shell.spawn 'npm', ['install'], (error, result) => 
 
                 if error
 
@@ -37,7 +36,7 @@ module.exports = class NpmPackage extends GitRepo
                     callback error, result
                     return
 
-                console.log '(ok)'.green, 'npm install in', process.cwd()
+                console.log '(done)'.green, 'npm install in', @path
                 process.chdir originalDir
                 callback error, result
 
