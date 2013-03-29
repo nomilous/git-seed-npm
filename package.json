@@ -5,6 +5,7 @@
   "dependencies": {
     "git-seed-core": "0.0.1"
   },
+  "main": "lib/index",
   "devDependencies": {
     "should": "~1.2.2",
     "nez": "0.0.7"

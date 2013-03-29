@@ -2,7 +2,7 @@ require('nez').realize 'Index', (Index, test, it, should) ->
 
     it 'exports the package plugin implementation', (done) -> 
 
-        Index.package.should.equal require '../lib/npm_package'
+        Index.Package.should.equal require '../lib/npm_package'
         test done
 
     it 'exports (as a proxy) the git-seed-core.Shell module', (done) -> 
@@ -15,6 +15,6 @@ require('nez').realize 'Index', (Index, test, it, should) ->
         #   git/shell (should that be necessary, eg. windows)
         # 
 
-        Index.shell.should.equal require('git-seed-core').Shell
+        Index.Shell.should.equal require('git-seed-core').Shell
         test done
 
