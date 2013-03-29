@@ -9,6 +9,5 @@
     "should": "~1.2.2",
     "nez": "0.0.7"
   },
-  "main": "./lib/npm_package",
   "repository": "git@github.com:nomilous/git-seed-npm.git"
 }

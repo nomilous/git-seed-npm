@@ -11,4 +11,3 @@ GitSeedNpm = require('nez').objective 'GitSeedNpm',
 
     """, (requirement) -> 
 
-
