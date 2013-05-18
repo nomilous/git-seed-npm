@@ -4,21 +4,7 @@ Shell   = require('git-seed-core').Shell
 
 module.exports = class NpmPackage extends GitRepo
 
-    @init: (repoDir, seq) -> 
-
-        #
-        # override init to define manager property as npm
-        #
-
-        return new NpmPackage
-
-            root:    seq == 0
-            path:    repoDir
-            origin:  Git.showOrigin repoDir
-            branch:  Git.showBranch repoDir
-            ref:     Git.showRef repoDir
-            manager: 'npm'
-
+    @manager: -> 'npm'
 
     install: (callback) -> 
 
