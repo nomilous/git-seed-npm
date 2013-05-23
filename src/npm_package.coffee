@@ -6,15 +6,41 @@ module.exports = class NpmPackage extends GitRepo
 
     @manager: -> 'npm'
 
-    install: (callback) -> 
+    # install: (defer, callback) ->
+
+    #     console.log 'INSTALL::::', arguments
+
+    #     Shell.spawnAt directory: @path, 'npm', ['install'], defer, (error, result) => 
+
+    #         console.log 'interim install result', arguments
+
+    #         unless error
+
+    #             callback null
 
 
-        Shell.spawnAt directory: @path, 'npm', ['install'], (error, result) => 
 
-            if error
 
-                console.log '(failed)'.red, 'npm install error:', error
-                callback error, result
-                return
 
-            callback error, result
+    #         # if error
+
+    #         #     console.log error
+
+    #         #     defer.notify
+
+    #         #         cli:
+
+    #         #             conteext: 'bad'
+    #         #             event: 'package install failed'
+    #         #             detail: error.message
+
+    #         #     defer.reject error
+    #         #     return
+
+    #         # defer.notify
+
+    #         #     event: 'output'
+    #         #     detail: result.stdout + result.stderr
+
+    #         # callback null, result
+
