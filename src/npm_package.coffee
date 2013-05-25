@@ -7,61 +7,12 @@ module.exports = class NpmPackage extends GitRepo
     @manager: -> 'npm'
 
     @install: (repo, superTask, callback) -> 
+        
+        Shell.spawnAt(
 
-        superTask.notify.info.good 'npm install', "in #{repo.path}"
-        callback null, {}
+            directory: repo.path
+            'npm', ['install']
+            superTask
+            callback
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    #     console.log 'install', arguments
-
-    # install: (defer, callback) ->
-
-    #     console.log 'INSTALL::::', arguments
-
-    #     Shell.spawnAt directory: @path, 'npm', ['install'], defer, (error, result) => 
-
-    #         console.log 'interim install result', arguments
-
-    #         unless error
-
-    #             callback null
-
-
-
-
-
-    #         # if error
-
-    #         #     console.log error
-
-    #         #     defer.notify
-
-    #         #         cli:
-
-    #         #             conteext: 'bad'
-    #         #             event: 'package install failed'
-    #         #             detail: error.message
-
-    #         #     defer.reject error
-    #         #     return
-
-    #         # defer.notify
-
-    #         #     event: 'output'
-    #         #     detail: result.stdout + result.stderr
-
-    #         # callback null, result
-
+        )
