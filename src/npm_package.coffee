@@ -6,7 +6,7 @@ module.exports = class NpmPackage extends GitRepo
 
     @manager: -> 'npm'
 
-    @install: (repo, superTask, callback) -> 
+    @install: (repo, args, superTask, callback) -> 
         
         Shell.spawnAt(
 
