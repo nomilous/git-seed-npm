@@ -6,6 +6,27 @@ module.exports = class NpmPackage extends GitRepo
 
     @manager: -> 'npm'
 
+    @install: (repo, superTask, callback) -> 
+
+        superTask.notify.info.good 'npm install', "in #{repo.path}"
+        callback null, {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #     console.log 'install', arguments
+
     # install: (defer, callback) ->
 
     #     console.log 'INSTALL::::', arguments
