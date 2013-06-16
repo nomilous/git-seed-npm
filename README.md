@@ -5,4 +5,4 @@ npm package manager plugin for [git-seed](https://github.com/nomilous/git-seed)
 
 ### Current Verison
 
-0.0.3
+0.0.3 (unstable)
