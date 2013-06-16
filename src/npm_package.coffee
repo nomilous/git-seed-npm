@@ -6,13 +6,14 @@ module.exports = class NpmPackage extends GitRepo
 
     @manager: -> 'npm'
 
-    @install: (repo, args, superTask, callback) -> 
+    @install: (superTask, repo, args, callback) -> 
+
+        superTask.allow_stdio = true
         
         Shell.spawnAt(
-
-            directory: repo.path
-            'npm', ['install']
             superTask
+            directory: repo.workDir
+            'npm', ['install']
             callback
 
         )
