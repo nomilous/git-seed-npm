@@ -1,8 +1,10 @@
-require('nez').realize 'Index', (Index, test, it, should) -> 
+ipso = require 'ipso'
 
-    it 'exports the package plugin implementation', (done) -> 
+describe 'Index', -> 
 
-        Index.Package.should.equal require '../lib/npm_package'
-        test done
+    it 'exports the package plugin implementation', 
 
-   
+        ipso (done, Index, should) -> 
+
+            Index.Package.should.equal require '../lib/npm_package'
+            done()

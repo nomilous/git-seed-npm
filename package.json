@@ -1,14 +1,14 @@
 {
   "name": "git-seed-npm",
   "description": "npm package manager plugin for git-seed",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "dependencies": {
     "git-seed-core": "0.0.2"
   },
   "main": "lib/index",
   "devDependencies": {
     "should": "~1.2.2",
-    "nez": "0.0.7"
+    "ipso": "0.0.18"
   },
   "repository": "git@github.com:nomilous/git-seed-npm.git"
 }
